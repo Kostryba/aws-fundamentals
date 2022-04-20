@@ -20,8 +20,6 @@ variable "instance_name" {
   default     = "ExampleAppServerInstance"
 }
 
-
-
 resource "aws_iam_role_policy" "s3_full_access_policy" {
   name = "s3_full_access_policy"
   role = aws_iam_role.ec2_s3_full_access_role.id
