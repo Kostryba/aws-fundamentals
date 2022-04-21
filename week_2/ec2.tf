@@ -11,7 +11,7 @@ resource "aws_instance" "app_server" {
   iam_instance_profile   = aws_iam_instance_profile.ec2_profile.name
   user_data              = <<EOF
   		#! /bin/bash
-       aws s3api get-object --bucket kostryba-bucket --key wheels.png wheels.png
+       aws s3api get-object --bucket week-2-bucket --key testfile.txt testfile.txt
   	EOF
 
   key_name = "okostryba_lohika_ssh"
