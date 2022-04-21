@@ -9,6 +9,12 @@ resource "aws_instance" "app_server" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.http_and_ssh_group.id]
   iam_instance_profile   = aws_iam_instance_profile.ec2_profile.name
+  user_data              = <<EOF
+  		#! /bin/bash
+       aws s3api get-object --bucket kostryba-bucket --key wheels.png wheels.png
+  	EOF
+
+  key_name = "okostryba_lohika_ssh"
 
   tags = {
     Name = var.instance_name
