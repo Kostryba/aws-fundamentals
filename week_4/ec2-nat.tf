@@ -5,11 +5,6 @@ resource "aws_instance" "ec2-nat" {
   vpc_security_group_ids = [aws_security_group.public-security-group.id]
   source_dest_check      = false
 
-  user_data = <<EOF
-  		#! /bin/bash
-
-  	EOF
-
   key_name = "okostryba_lohika_ssh"
 
   tags = {
