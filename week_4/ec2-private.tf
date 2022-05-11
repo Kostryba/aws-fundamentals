@@ -7,12 +7,12 @@ resource "aws_instance" "ec2-private" {
   user_data              = <<EOF
   		#! /bin/bash
   		sudo su
-        yum update -y
-        yum install httpd -y
-        service httpd start
-        chkconfig httpd on
-        cd /var/www/html
-        echo "<html><h1>This is WebServer from private subnet</h1></html>" > index.html
+      yum update -y
+      yum install httpd -y
+      service httpd start
+      chkconfig httpd on
+      cd /var/www/html
+      echo "<html><h1>This is WebServer from private subnet</h1></html>" > index.html
   	EOF
 
   key_name = "okostryba_lohika_ssh"
