@@ -5,8 +5,8 @@ resource "aws_instance" "ec2-private" {
   subnet_id              = aws_subnet.week4-subnet-private.id
   vpc_security_group_ids = [aws_security_group.private-security-group.id]
   user_data              = <<EOF
-  		#! /bin/bash
-  		sudo su
+      #! /bin/bash
+      sudo su
       yum update -y
       yum install httpd -y
       service httpd start
