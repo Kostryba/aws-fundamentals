@@ -5,7 +5,7 @@ resource "aws_instance" "ec2-public" {
   subnet_id              = aws_subnet.week4-subnet-public.id
   vpc_security_group_ids = [aws_security_group.public-security-group.id]
   user_data              = <<EOF
-  		#! /bin/bash
+         #! /bin/bash
          sudo su
          yum update -y
          yum install httpd -y
