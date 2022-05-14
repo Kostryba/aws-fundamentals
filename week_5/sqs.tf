@@ -1,3 +1,3 @@
-resource "aws_sqs_queue" "week_4_queue" {
-  name = "week_4_queue"
+resource "aws_sqs_queue" "week_5_queue" {
+  name = "week_5_queue"
 }
