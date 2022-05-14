@@ -1,3 +1,3 @@
-resource "aws_sns_topic" "week_4_sns" {
-  name = "week_4_sns"
+resource "aws_sns_topic" "week_5_sns" {
+  name = "week_5_sns"
 }
