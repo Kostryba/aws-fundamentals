@@ -1,6 +1,6 @@
 resource "aws_iam_role_policy" "sns_access_policy" {
   name = "sns_access_policy"
-  role = aws_iam_role.ec2_week_4_access_role.id
+  role = aws_iam_role.ec2_week_5_access_role.id
 
   policy = jsonencode({
     "Version" : "2012-10-17",
@@ -10,7 +10,7 @@ resource "aws_iam_role_policy" "sns_access_policy" {
           "sns:Publish"
         ],
         "Effect" : "Allow",
-        "Resource" : "arn:aws:sns:us-east-1:532442580831:week_4_sns"
+        "Resource" : "arn:aws:sns:us-east-1:532442580831:week_5_sns"
       }
     ]
   })
@@ -18,7 +18,7 @@ resource "aws_iam_role_policy" "sns_access_policy" {
 
 resource "aws_iam_role_policy" "sqs_access_policy" {
   name = "sqs_access_policy"
-  role = aws_iam_role.ec2_week_4_access_role.id
+  role = aws_iam_role.ec2_week_5_access_role.id
 
   policy = jsonencode({
     "Version" : "2012-10-17",
@@ -29,7 +29,7 @@ resource "aws_iam_role_policy" "sqs_access_policy" {
           "sqs:ReceiveMessage"
         ],
         "Effect" : "Allow",
-        "Resource" : "arn:aws:sqs:us-east-1:532442580831:week_4_queue"
+        "Resource" : "arn:aws:sqs:us-east-1:532442580831:week_5_queue"
       }
     ]
   })
@@ -37,11 +37,11 @@ resource "aws_iam_role_policy" "sqs_access_policy" {
 
 resource "aws_iam_instance_profile" "ec2_profile" {
   name = "ec2_profile"
-  role = aws_iam_role.ec2_week_4_access_role.name
+  role = aws_iam_role.ec2_week_5_access_role.name
 }
 
-resource "aws_iam_role" "ec2_week_4_access_role" {
-  name = "ec2_week_4_access_role"
+resource "aws_iam_role" "ec2_week_5_access_role" {
+  name = "ec2_week_5_access_role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
