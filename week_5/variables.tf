@@ -16,10 +16,10 @@ variable "ec2_instance_type" {
 
 variable "sns_topic_name" {
   type    = string
-  default = "week_4_sns"
+  default = "week_5_sns"
 }
 
 variable "sqs_queue_name" {
   type    = string
-  default = "week_4_queue"
+  default = "week_5_queue"
 }
